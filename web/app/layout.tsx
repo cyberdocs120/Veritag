@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Navbar } from "@/components/Navbar";
-import { OfflineBanner } from "@/components/OfflineBanner";
+import { I18nProvider } from "@/lib/i18n";
 import { WalletProvider } from "@/lib/wallet-context";
 import "./globals.css";
 
@@ -36,15 +36,16 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <meta name="apple-mobile-web-app-title" content="Veritag" />
       </head>
       <body className="min-h-screen flex flex-col">
-        <WalletProvider>
-          <Navbar />
-          <OfflineBanner />
-          <main className="flex-1">{children}</main>
-          <footer className="border-t border-slate-200 bg-white py-6 text-center text-xs text-slate-500">
-            Veritag · Powered by Stellar Soroban · Chain-anchored authenticity &amp; transferable
-            warranties
-          </footer>
-        </WalletProvider>
+        <I18nProvider>
+          <WalletProvider>
+            <Navbar />
+            <main className="flex-1">{children}</main>
+            <footer className="border-t border-slate-200 bg-white py-6 text-center text-xs text-slate-500">
+              Veritag · Powered by Stellar Soroban · Chain-anchored authenticity &amp; transferable
+              warranties
+            </footer>
+          </WalletProvider>
+        </I18nProvider>
       </body>
     </html>
   );
