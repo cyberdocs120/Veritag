@@ -73,11 +73,11 @@ export function StatusBanner({ status }: { status: VerificationStatus }) {
   return (
     <section className={`rounded-2xl border p-6 shadow-sm ${meta.classes}`}>
       <div className="inline-flex items-center gap-2 rounded-full bg-white/80 px-3 py-1 text-xs font-semibold uppercase tracking-wider shadow-sm">
-        <span className={`h-2.5 w-2.5 rounded-full ${meta.dotClasses}`} />
+        <span className={`h-2.5 w-2.5 shrink-0 rounded-full ${meta.dotClasses}`} />
         {meta.badge}
       </div>
-      <h1 className="mt-3 text-2xl font-bold tracking-tight sm:text-3xl">{meta.title}</h1>
-      <p className="mt-2 text-sm leading-relaxed opacity-90 sm:text-base">{meta.description}</p>
+      <h1 className="mt-3 text-xl font-bold tracking-tight sm:text-3xl">{meta.title}</h1>
+      <p className="mt-2 text-sm leading-relaxed opacity-90">{meta.description}</p>
     </section>
   );
 }

@@ -18,42 +18,42 @@ export function Navbar() {
 
   return (
     <header className="sticky top-0 z-30 border-b border-slate-200 bg-white/90 backdrop-blur">
-      <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3.5 sm:px-6">
-        <Link href="/" className="flex items-center gap-2.5">
-          <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-slate-900 text-sm font-bold text-white">
+      <div className="mx-auto flex max-w-6xl items-center justify-between px-3 py-3 sm:px-6 sm:py-3.5">
+        <Link href="/" className="flex items-center gap-2">
+          <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-slate-900 text-sm font-bold text-white sm:h-8 sm:w-8">
             V
           </span>
           <div>
-            <span className="text-lg font-bold tracking-tight text-slate-900">Veritag</span>
-            <span className="ml-2 hidden rounded-full bg-blue-50 px-2 py-0.5 text-xs font-medium text-blue-700 sm:inline-block">
+            <span className="text-base font-bold tracking-tight text-slate-900 sm:text-lg">Veritag</span>
+            <span className="ml-1.5 hidden rounded-full bg-blue-50 px-2 py-0.5 text-xs font-medium text-blue-700 sm:inline-block">
               Stellar Soroban
             </span>
           </div>
         </Link>
 
-        <div className="flex items-center gap-3">
-          <nav className="flex items-center gap-1 text-sm font-medium text-slate-600 sm:gap-3">
+        <div className="flex items-center gap-2 sm:gap-3">
+          <nav className="flex items-center gap-0.5 text-sm font-medium text-slate-600 sm:gap-1">
             <Link
               href="/"
-              className="rounded-md px-2.5 py-1.5 transition hover:bg-slate-100 hover:text-slate-900"
+              className="rounded-md px-2 py-1.5 text-xs transition hover:bg-slate-100 hover:text-slate-900 sm:px-2.5 sm:text-sm"
             >
               Verify
             </Link>
             <Link
               href="/owner"
-              className="rounded-md px-2.5 py-1.5 transition hover:bg-slate-100 hover:text-slate-900"
+              className="rounded-md px-2 py-1.5 text-xs transition hover:bg-slate-100 hover:text-slate-900 sm:px-2.5 sm:text-sm"
             >
               Owner
             </Link>
             <Link
               href="/service"
-              className="rounded-md px-2.5 py-1.5 transition hover:bg-slate-100 hover:text-slate-900"
+              className="rounded-md px-2 py-1.5 text-xs transition hover:bg-slate-100 hover:text-slate-900 sm:px-2.5 sm:text-sm"
             >
               Service
             </Link>
             <Link
               href="/brand"
-              className="rounded-md px-2.5 py-1.5 transition hover:bg-slate-100 hover:text-slate-900"
+              className="rounded-md px-2 py-1.5 text-xs transition hover:bg-slate-100 hover:text-slate-900 sm:px-2.5 sm:text-sm"
             >
               Brands
             </Link>
@@ -63,13 +63,13 @@ export function Navbar() {
             <button
               type="button"
               onClick={() => setMenuOpen((prev) => !prev)}
-              className="rounded-xl bg-slate-900 px-3.5 py-2 text-xs font-semibold text-white transition hover:bg-slate-800"
+              className="rounded-xl bg-slate-900 px-2.5 py-1.5 text-xs font-semibold text-white transition hover:bg-slate-800 sm:px-3.5 sm:py-2"
             >
               {session
-                ? `${session.address.slice(0, 5)}...${session.address.slice(-4)}`
+                ? `${session.address.slice(0, 4)}...${session.address.slice(-3)}`
                 : connecting
-                  ? "Connecting..."
-                  : "Connect Wallet"}
+                  ? "..."
+                  : "Connect"}
             </button>
 
             {menuOpen && (
